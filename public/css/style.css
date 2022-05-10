@@ -1,0 +1,59 @@
+body {
+    background-image: url("../images/bg.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    font-family: 'Lato', sans-serif;
+}
+
+.brand-logo {
+    margin-bottom: 1rem;
+}
+
+.brand-logo img {
+    width: 100px;
+}
+
+.error {
+    font-size: 12px;
+    font-weight: bold;
+    color: red !important
+}
+
+.alert {
+    padding: 10px;
+    padding-left: 15px;
+}
+
+ ::placeholder {
+    font-size: 13px
+}
+
+.form-label {
+    padding: 0px;
+    margin: 0px;
+    font-size: 13px;
+}
+
+.card-h {
+    background-color: #555b57;
+    color: #fff
+}
+
+.card-b {
+    background-color: #f2f4f2;
+}
+
+.formred {
+    color: #900;
+    font-weight: bold
+}
+
+.err {
+    text-align: right;
+    color: #900;
+    font-size: 12px;
+    font-weight: bold;
+    padding-right: 20px
+}
