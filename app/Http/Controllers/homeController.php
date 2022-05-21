@@ -1,8 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
+use App\lib\calculatorClass;
 
 class homeController extends Controller
 {
@@ -17,22 +17,11 @@ class homeController extends Controller
             "module_6_score" => "required|numeric|min:40|max:100",
             "dissertation_score" => "required|numeric|min:40|max:100",
         ]);
-        $gradePoint = $this->calculateCGPA($validate);
+
+        $calculatorClass = new calculatorClass($validate);
+        $gradePoint = $calculatorClass->calculateCGPA();
         return view("grade", ["gradepoint"=>$gradePoint]);
     }
 
-    private function calculateCGPA($inputGrade)
-    {
-        $module_1 = $inputGrade['module_1_score'] * 0.2;
-        $module_2 = $inputGrade['module_2_score'] * 0.2;
-        $module_3 = $inputGrade['module_3_score'] * 0.2;
-        $module_4 = $inputGrade['module_4_score'] * 0.2;
-        $module_5 = $inputGrade['module_5_score'] * 0.2;
-        $module_6 = $inputGrade['module_6_score'] * 0.2;
-        $dissertation = $inputGrade['dissertation_score'] * 0.6;
-
-        $totalUnit = $module_1 + $module_2 + $module_3 + $module_4 + $module_5 + $module_6 + $dissertation;
-        $gradePoint = round($totalUnit/180, 2) * 100;
-        return $gradePoint;
-    }
+    
 }
